@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Repas index{% endblock %}
+
+{% block body %}
+    <h1>Repas index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Jour</th>
+                <th>Quantite</th>
+                <th>Heure</th>
+                <th>Libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for repa in repas %}
+            <tr>
+                <td>{{ repa.id }}</td>
+                <td>{{ repa.date ? repa.date|date('Y-m-d') : '' }}</td>
+                <td>{{ repa.jour ? repa.jour|date('Y-m-d') : '' }}</td>
+                <td>{{ repa.quantite }}</td>
+                <td>{{ repa.heure ? repa.heure|date('H:i:s') : '' }}</td>
+                <td>{{ repa.libelle }}</td>
+                <td>
+                    <a href="{{ path('repas_show', {'id': repa.id}) }}">show</a>
+                    <a href="{{ path('repas_edit', {'id': repa.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('repas_new') }}">Create new</a>
+{% endblock %}

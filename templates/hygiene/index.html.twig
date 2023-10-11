@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hygiene index{% endblock %}
+
+{% block body %}
+    <h1>Hygiene index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Libelle</th>
+                <th>Soins</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hygiene in hygienes %}
+            <tr>
+                <td>{{ hygiene.id }}</td>
+                <td>{{ hygiene.date ? hygiene.date|date('Y-m-d') : '' }}</td>
+                <td>{{ hygiene.heure ? hygiene.heure|date('H:i:s') : '' }}</td>
+                <td>{{ hygiene.libelle }}</td>
+                <td>{{ hygiene.soins }}</td>
+                <td>
+                    <a href="{{ path('hygiene_show', {'id': hygiene.id}) }}">show</a>
+                    <a href="{{ path('hygiene_edit', {'id': hygiene.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('hygiene_new') }}">Create new</a>
+{% endblock %}

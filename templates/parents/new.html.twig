@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Parents{% endblock %}
+
+{% block body %}
+    <h1>Create new Parents</h1>
+
+
+        {{ include('parents/_form.html.twig') }}
+        <a href="{{ path('parents_index') }}"class="btn btn-primary"style=" box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"><i class="fa fa-reply"style="padding-right: 10px;" aria-hidden="true"></i>back to list</a>
+
+{% endblock %}

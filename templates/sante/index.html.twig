@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sante index{% endblock %}
+
+{% block body %}
+    <h1>Sante index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Libelle</th>
+                <th>Quantite</th>
+                <th>Heure</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sante in santes %}
+            <tr>
+                <td>{{ sante.id }}</td>
+                <td>{{ sante.date ? sante.date|date('Y-m-d') : '' }}</td>
+                <td>{{ sante.libelle }}</td>
+                <td>{{ sante.quantite }}</td>
+                <td>{{ sante.heure ? sante.heure|date('H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('sante_show', {'id': sante.id}) }}">show</a>
+                    <a href="{{ path('sante_edit', {'id': sante.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('sante_new') }}">Create new</a>
+{% endblock %}

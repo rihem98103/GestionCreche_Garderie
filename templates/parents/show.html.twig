@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Parents{% endblock %}
+
+{% block body %}
+    <h1>Parents</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ parent.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ parent.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ parent.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ parent.email }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ parent.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ parent.adresse }}</td>
+            </tr>
+            
+            
+            
+            
+        </tbody>
+    </table>
+    <table>
+    <tr>
+    <th style=" padding-right:20px;">
+    <a href="{{ path('parents_index') }}"class="btn btn-primary"style=" box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"><i class="fa fa-reply"style="padding-right: 10px;" aria-hidden="true"></i>back to list</a>
+    </th><th style=" padding-right:20px;">
+    <a href="{{ path('parents_edit', {'id': parent.id}) }}"class="btn btn-warning" style="padding-right: 50px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"><i style="padding-right: 10px;" class="fa fa-pencil-square-o" aria-hidden="true"></i>edit</a>
+</th><th style=" padding-right:20px; padding-top:15px;">
+    {{ include('parents/_delete_form.html.twig') }}
+    </th></tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BebeController!{% endblock %}
+{% form_theme bebeForm 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+<h1> Ajouter  un bebe</h1>
+<bebe>
+{{ form_start(bebeForm)}}
+{{ form_row(bebeForm.nom,{'attr': {'placeholder': "Nom de bebe"}}) }}
+{{ form_row(bebeForm.prenom,{'attr': {'placeholder': "Prenom de bebe"}}) }}
+{{ form_row(bebeForm.age,{'attr': {'placeholder': "Age de bebe"}}) }}
+{{ form_row(bebeForm.datenaissance,{'attr': {'placeholder': "Date de naissance "}}) }}
+
+  <button  style="background: #0e1a35; font-size:16px; padding: 10px 27px 10px 45px;
+                         font-weight: 600;color: #ffffff;"        type="submit" class"btn btn-success"><i class="fa fa-plus"  style="padding-right: 10px;" aria-hidden="true"></i>Ajouter</button>
+
+<ul class="list-inline header-top pull-right"class="fa fa-search"  style="padding-bottom: 100px;">
+
+ <li class="hidden-xs"><a    href="{{path('cherch')}}"  aria-hidden="true"  class="add-project"  style="top:100px;font-size:16px; "  
+                        data-toggle="modal" data-target="#add_project">   <i class="fa fa-search" style="padding-right: 10px;" aria-hidden="true"></i>Chercher</a></li>
+ 
+ <li class="hidden-xs"><a href="{{path('cherch')}}" class="add-project" style="top:100px; font-size:16px;" data-toggle="modal" data-target="#add_project">
+ <i style="padding-right: 10px;" class="fa fa-pencil-square-o" aria-hidden="true"></i>  Modifier</a></li>
+
+</ul>
+</bebe>
+
+{{ form_end(bebeForm) }}
+
+{% endblock %}
+
+
+

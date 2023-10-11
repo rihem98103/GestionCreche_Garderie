@@ -1,0 +1,6 @@
+[06-Apr-2021 00:00:28 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 405504 bytes) in C:\Users\cherif\crechs\vendor\symfony\dependency-injection\ContainerBuilder.php on line 1453
+[06-Apr-2021 00:07:26 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 32768 bytes) in C:\Users\cherif\crechs\vendor\symfony\framework-bundle\Command\EventDispatcherDebugCommand.php on line 1
+[06-Apr-2021 00:22:00 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 405504 bytes) in C:\Users\cherif\crechs\vendor\symfony\dependency-injection\ContainerBuilder.php on line 1453
+[06-Apr-2021 00:25:37 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 405504 bytes) in C:\Users\cherif\crechs\vendor\symfony\dependency-injection\ContainerBuilder.php on line 1453
+[06-Apr-2021 00:27:17 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 405504 bytes) in C:\Users\cherif\crechs\vendor\symfony\dependency-injection\ContainerBuilder.php on line 1453
+[06-Apr-2021 00:29:13 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 405504 bytes) in C:\Users\cherif\crechs\vendor\symfony\dependency-injection\ContainerBuilder.php on line 1453

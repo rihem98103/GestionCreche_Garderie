@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello BebeController!{% endblock %}
+{% form_theme bebeForm 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+<h1> Modifier un bebe</h1>
+
+<bebe>
+{{ form_start(bebeForm)}}
+{{ form_row(bebeForm.nom,{'attr': {'placeholder': "Nom de bebe"}}) }}
+{{ form_row(bebeForm.prenom,{'attr': {'placeholder': "Prenom de bebe"}}) }}
+{{ form_row(bebeForm.age,{'attr': {'placeholder': "Age de bebe"}}) }}
+{{ form_row(bebeForm.datenaissance,{'attr': {'placeholder': "Date de naissance "}}) }}
+ 
+<button href="/creer" type="submit" class"btn btn-success"> 
+    {% if editMode %}
+      Enregistrer 
+    {% endif %}  
+</button>
+</bebe>
+{{ form_end(bebeForm)}}
+</div>
+{% endblock %}
+{% block javascripts %}
+<script src="/js/main.js"></script>
+{% endblock %}

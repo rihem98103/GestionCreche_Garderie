@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Hello BebeController! {% endblock %}
+{% form_theme bebeForm 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+<h1> Ajouter un bebe</h1>
+
+{{ form_start(bebeForm) }}
+<div class="form-row align-items-end" >
+   <div class="col">
+     {{ form_row(bebeForm.nom) }}
+   </div>
+
+  <div class="col">
+    <div class="form-group">
+       <button type="submit" class="btn btn-success" style="background: #0e1a35; font-size:16px; padding: 10px 27px 10px 45px;
+          font-weight: 600;color: #ffffff;"><i class="fa fa-search" style="padding-right: 10px;" aria-hidden="true"></i>Rechercher bebe 
+       </button>
+    </div>
+  </div>
+</div>
+ {{ form_end(bebeForm) }}
+<table id="bebes" class="table table-bordered table-striped">
+<tr>
+<th> id </th>
+<th> Nom </th>
+<th> Prenom </th>
+<th> age  </th>
+<th> Date de Naissance  </th>
+<th> modifier</th>
+<th>supprimer</th>
+
+</tr>
+  {% for bebe in bebes %}
+    <tr class="active"> 
+     <td> {{ bebe.id }} </td>
+     <td> {{ bebe.nom }} </td>
+     <td> {{ bebe.prenom }} </td> 
+     <td>{{bebe.age }} </td> 
+     <td>{{ bebe.datenaissance.format("d/m/Y") }} </td>
+     <td><a href="/editt/{{ bebe.id }}" class="btn btn-warning" style="padding-right: 50px;"> <i style="padding-right: 10px;" class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a></td> 
+     <td><a href="/bebe/delete/{{ bebe.id }}" class="btn btn-danger delete-bebe" data-id="{{ bebe.id }}"> <i style="padding-right: 10px;" class="fa fa-trash-o" aria-hidden="true"></i>supprimer</a></td>
+    
+    </tr>
+</tr>
+  {% endfor %}
+ </table>
+</div>
+{% endblock %}
+
+
+{% block javascripts %}
+<script src="/js/main.js"></script>
+{% endblock %}
+

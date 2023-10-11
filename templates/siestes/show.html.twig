@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Siestes{% endblock %}
+
+{% block body %}
+    <h1>Siestes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sieste.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ sieste.date ? sieste.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Heurededebut</th>
+                <td>{{ sieste.heurededebut ? sieste.heurededebut|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Heurededormir</th>
+                <td>{{ sieste.heurededormir ? sieste.heurededormir|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Qualite</th>
+                <td>{{ sieste.qualite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('siestes_index') }}">back to list</a>
+
+    <a href="{{ path('siestes_edit', {'id': sieste.id}) }}">edit</a>
+
+    {{ include('siestes/_delete_form.html.twig') }}
+{% endblock %}
